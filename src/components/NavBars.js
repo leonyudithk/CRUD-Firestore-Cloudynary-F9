@@ -23,17 +23,24 @@ const NavBars = () => {
                         width="80" alt="" /></a></Navbar.Brand>
 
                     <Nav className="me-auto">
-                        <Link to="/">
+                        <Nav.Link> <Link to="/" >
                             Home
-                        </Link>
-                        <Link to="/add">
+                        </Link></Nav.Link>
+                        <Nav.Link><Link to="/add">
                             Agregar
-                        </Link>
-                        <Link to="/list">
-                           Listar
-                        </Link>
+                        </Link></Nav.Link>
+
+                        <Nav.Link><Link to="/list">
+                            Listar
+                        </Link></Nav.Link>
+
+
 
                     </Nav>
+                    <Nav.Link><Link to="/cargarApi">
+                            Cargar Api
+                        </Link></Nav.Link>
+                    <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 </Container>
             </Navbar>
         </div>

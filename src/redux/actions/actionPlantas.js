@@ -14,13 +14,15 @@ export const editAsync = (codigo, planta)=>{
             id= docu.id
         })
         console.log(id)
-
         const documenRef = doc(baseDato, "plantasBD", id)
-        await updateDoc(documenRef, planta)
-        .then(() =>
-        listAsyn())
+       await updateDoc(documenRef, planta)
+        .then(resp => {
+            dispatch(editSync(planta))
+            dispatch(listAsyn())
+            console.log(resp)
+         })       
         .catch((err) => console.log(err))
-        console.log(documenRef)
+ 
     }
 }
 
@@ -60,7 +62,6 @@ export const deleteSync = (codigo)=>{
 export const listAsyn =()=>{
     return async (dispatch)=>{
         const  colleccionTraer = await getDocs(collection(baseDato , "plantasBD"))
-        console.log(colleccionTraer)
         const plantas = []
         colleccionTraer.forEach((doc)=>{
             plantas.push({
@@ -69,7 +70,6 @@ export const listAsyn =()=>{
 
             })
         })
-        console.log(plantas)
         dispatch(listSync(plantas))
         
     }

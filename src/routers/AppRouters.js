@@ -16,9 +16,7 @@ const AppRouters = () => {
        const auth = getAuth()
        onAuthStateChanged(auth, (user)=>{
            if(user?.uid){
-               console.log(user)
-            //  dispatch(loginEmailPassAsync(user.uid, user.displayName))
-               setIsLoggedIn(true)
+                         setIsLoggedIn(true)
            }
            else{
                setIsLoggedIn(false)

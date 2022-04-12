@@ -46,7 +46,7 @@ const Add = () => {
 
     return (
         <div>
-             <Form onSubmit={handleSubmit}>
+             <Form onSubmit={handleSubmit} margin={50}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Nombre de la Planta</Form.Label>
                     <Form.Control type="text" name="nombre" placeholder="Enter nombre" value={nombre} onChange={handleInputChange} />
