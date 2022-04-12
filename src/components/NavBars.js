@@ -29,6 +29,9 @@ const NavBars = () => {
                         <Link to="/add">
                             Agregar
                         </Link>
+                        <Link to="/list">
+                           Listar
+                        </Link>
 
                     </Nav>
                 </Container>

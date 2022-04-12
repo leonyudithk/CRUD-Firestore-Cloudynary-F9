@@ -16,7 +16,7 @@ export const plantasReducers = (state = initialState, action) => {
             return {
                 plantas: [...action.payload]
             }
-            
+
         case typesPlantas.edit:
             return {
                 ...state
@@ -24,7 +24,7 @@ export const plantasReducers = (state = initialState, action) => {
 
         case typesPlantas.delete:
             return {
-                ...state
+                plantas: state.plantas.filter(p => p.codigo !== action.payload)
             }
 
         default:

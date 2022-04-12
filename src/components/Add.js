@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { FileUp } from '../helpers/FileUp';
 import { useForm } from '../Hooks/useForm';
 import { addAsync } from '../redux/actions/actionPlantas';
+import List from './List';
 
 const Add = () => {
     
@@ -73,6 +74,8 @@ const Add = () => {
                 </Button>
              
             </Form>
+
+            <List/>
         </div>
     );
 };
